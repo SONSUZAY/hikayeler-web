@@ -8,10 +8,8 @@
         /* --- GENEL AYARLAR (KOYU MOD) --- */
         body {
             font-family: 'Georgia', serif;
-            /* Arka plan: Tam siyah değil, çok koyu bir gece mavisi */
-            background-color: #0f172a; 
-            /* Yazı Rengi: Göz yormayan açık gümüş gri */
-            color: #cbd5e1;
+            background-color: #0f172a; /* Sevdiğiniz Gece Mavisi Arka Plan */
+            color: #cbd5e1; /* Okunaklı Gümüş Gri Yazı */
             line-height: 1.8;
             margin: 0;
             padding: 20px;
@@ -19,55 +17,75 @@
             justify-content: center;
         }
 
-        /* --- HİKAYE KUTUSU --- */
+        /* --- ANA KUTU --- */
         .story-container {
             max-width: 800px;
-            /* Kutu Rengi: Arka plandan bir ton daha açık, gri-mavi */
-            background-color: #1e293b; 
+            background-color: #1e293b; /* Kutu Rengi */
             padding: 40px;
             border-radius: 16px;
-            /* Hafif bir gölge ile derinlik hissi */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            /* Kenarlık: Mistik bir mor/mavi tonu */
-            border-left: 5px solid #818cf8;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border-top: 5px solid #fbbf24; /* Hayat Yıldızı görselindeki Sarı Çizgi detayı */
         }
 
-        /* --- BÖLÜM ETİKETİ --- */
-        .chapter-tag {
-            font-family: 'Arial', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #818cf8; /* Parlak İndigo */
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* --- BAŞLIKLAR --- */
+        /* --- BAŞLIK ALANI --- */
         h1 {
-            color: #f1f5f9; /* Neredeyse beyaz */
+            color: #fbbf24; /* Altın Sarısı Başlık (Görseldeki gibi) */
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- YAZAR VE BİLGİ ALANI (METADATA) --- */
+        .meta-info {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
             border-bottom: 1px solid #334155;
-            padding-bottom: 20px;
-            text-shadow: 0 0 10px rgba(129, 140, 248, 0.3); /* Hafif neon etkisi */
+            padding-bottom: 15px;
+        }
+
+        .meta-info span {
+            color: #38bdf8; /* Açık Mavi Vurgular */
+            font-weight: bold;
+        }
+
+        /* --- VİDEO OYNATICI --- */
+        .video-wrapper {
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden; /* Köşelerin yuvarlak kalması için */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            object-fit: cover; /* Videoyu kutuya tam oturtur */
+        }
+
+        /* --- HİKAYE METNİ --- */
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
         }
 
         h2 {
-            color: #c084fc; /* Açık Mor */
-            font-size: 1.6rem;
-            margin-top: 35px;
-            border-left: 3px solid #c084fc;
+            color: #818cf8; /* Alt Başlık Rengi */
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-left: 3px solid #fbbf24;
             padding-left: 15px;
         }
 
-        /* --- VURGULAR --- */
         strong {
-            color: #38bdf8; /* Açık Gök Mavisi - Önemli kelimeler parlasın */
+            color: #fbbf24; /* Metin içi vurgular sarı */
         }
         
         em {
@@ -76,37 +94,29 @@
 
         /* --- ALINTI KUTUSU --- */
         .quote {
-            background-color: #0f172a; /* Gövde rengiyle uyumlu koyu kutu */
-            border-left: 4px solid #38bdf8;
+            background-color: #0f172a;
+            border-left: 4px solid #818cf8;
             padding: 20px;
             margin: 30px 0;
             font-style: italic;
-            font-size: 1.1rem;
             color: #e2e8f0;
             border-radius: 0 8px 8px 0;
         }
 
         /* --- YAZAR İMZASI --- */
         .author-signature {
-            text-align: right;
-            margin-top: 50px;
-            font-size: 1.1rem;
-            color: #94a3b8;
-            border-top: 1px solid #334155;
-            padding-top: 20px;
-        }
-
-        .author-signature span {
-            color: #818cf8;
-            font-weight: bold;
-            font-size: 1.3rem;
-            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 40px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2rem;
+            color: #fbbf24;
+            opacity: 0.8;
         }
 
         /* --- MOBİL UYUMLULUK --- */
         @media (max-width: 600px) {
             .story-container {
-                padding: 25px;
+                padding: 20px;
             }
             h1 {
                 font-size: 1.8rem;
@@ -117,10 +127,21 @@
 <body>
 
     <div class="story-container">
-        <span class="chapter-tag">1. BÖLÜM</span>
-        
-        <h1>🦋 Kara Kelebek Efsanesi</h1>
+        <h1>Kara Kelebek Efsanesi</h1>
 
+        <div class="meta-info">
+            Yazar: <span>FNC</span> | 
+            Yayıncı: <span>SONSUZ.AY</span> | 
+            Tür: <span>Efsane / Gizem</span>
+        </div>
+
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="videolar/video_kara_kelebek_efsanesi.mp4" type="video/mp4">
+                Tarayıcınız video etiketini desteklemiyor.
+            </video>
+        </div>
+        
         <p>Efsanelere göre, ormanın derinliklerinde yaşayan devasa bir <strong>Kara Kelebek</strong> varmış. Bu kelebek, kanat çırptığı ve konduğu tüm ormanlara kuraklık ve kıtlık getirirmiş. İnanışa göre, kim bu kelebeği yenmeyi başarırsa, topraklara yeniden bolluk ve bereket gelirmiş.</p>
 
         <p>Bu efsaneyi duyan Başak, kelebeği çok merak etmiş ve hakkında derin araştırmalar yapmaya başlamış. Uzun uğraşlar sonunda Kara Kelebek'in yerini gösterdiği iddia edilen birçok eski harita bulmuş. Ancak bir sorun varmış; haritaların her biri farklı bir konumu işaret ediyormuş. Başak pes etmemiş ve haritaları üst üste koyduğunda önemli bir detayı fark etmiş: Bütün haritalar farklı yolları gösterse de, hepsi aslında tek bir ortak noktada kesişiyormuş.</p>
@@ -148,7 +169,7 @@
         </div>
 
         <div class="author-signature">
-            Yazar: <span>FNC</span>
+            ~ FNC ~
         </div>
     </div>
 
